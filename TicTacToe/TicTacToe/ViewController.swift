@@ -7,12 +7,14 @@
 //
 
 import UIKit
-
 @available(iOS 13.0, *)
+
 class ViewController: UIViewController {
     
     // player 1 is X, player 2 is O
     var activePlayer = 1
+    
+    var tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     @IBOutlet var gameButtons: [GameButton]!
    
@@ -31,9 +33,13 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    displayLabel.text = "Let's Play Tic Tac Toe!"
   }
     
     @IBAction func newGame(_ sender: UIButton) {
+        
+        displayLabel.text = "Play Again!"
+        
         colRow0.setImage(UIImage(systemName: ""), for:.normal)
         colRow1.setImage(UIImage(systemName: ""), for:.normal)
         colRow2.setImage(UIImage(systemName: ""), for:.normal)
@@ -48,12 +54,19 @@ class ViewController: UIViewController {
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
         print("at row \(gameButton.row) at column \(gameButton.col)")
         
-        if activePlayer == 1 {
-            gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
-            activePlayer = 2
-        } else {
-            gameButton.setImage(UIImage(systemName: "circle"), for:.normal)
-            activePlayer = 1
+        let position = gameButton.tag - 0
+        
+        if tagPlacement[position] == 0 {
+            
+            tagPlacement[position] = activePlayer
+            
+            if activePlayer == 1 {
+                gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
+                activePlayer = 2
+            } else {
+                gameButton.setImage(UIImage(systemName: "circle"), for:.normal)
+                activePlayer = 1
+            }
         }
     }
     
