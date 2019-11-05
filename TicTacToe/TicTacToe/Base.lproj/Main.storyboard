@@ -145,6 +145,9 @@
                                 <rect key="frame" x="57" y="694" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2I-v6-6lT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prh-hm-A0t" customClass="GameButton" customModule="TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="49" y="288" width="70" height="70"/>
@@ -161,11 +164,28 @@
                                     <action selector="gameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h4a-1W-9mO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIo-ro-ayw">
+                                <rect key="frame" x="20" y="117" width="374" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.77860102711401225" blue="0.57451074003489921" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="colRow0" destination="prh-hm-A0t" id="uZk-xU-t6X"/>
+                        <outlet property="colRow1" destination="u1b-CJ-JUA" id="LW1-aZ-UqQ"/>
+                        <outlet property="colRow2" destination="AzY-cm-hBj" id="4jR-7L-6D0"/>
+                        <outlet property="colRow3" destination="QXK-Oa-dGq" id="5fA-3o-NXR"/>
+                        <outlet property="colRow4" destination="O7C-kr-EfN" id="fEI-BH-hdg"/>
+                        <outlet property="colRow5" destination="8Be-ZJ-XuP" id="z0U-KJ-0PF"/>
+                        <outlet property="colRow6" destination="oAE-U9-4iL" id="wdk-sM-Van"/>
+                        <outlet property="colRow7" destination="oSe-Fk-PIT" id="jVf-BX-HP6"/>
+                        <outlet property="colRow8" destination="0DN-dt-VJy" id="I7x-AD-5V8"/>
+                        <outlet property="displayLabel" destination="WIo-ro-ayw" id="SWP-n2-Hty"/>
                         <outletCollection property="gameButtons" destination="QXK-Oa-dGq" collectionClass="NSMutableArray" id="ODg-vd-KYB"/>
                         <outletCollection property="gameButtons" destination="oAE-U9-4iL" collectionClass="NSMutableArray" id="51Q-9k-Nom"/>
                         <outletCollection property="gameButtons" destination="u1b-CJ-JUA" collectionClass="NSMutableArray" id="FNV-3h-ZqX"/>
@@ -174,6 +194,7 @@
                         <outletCollection property="gameButtons" destination="AzY-cm-hBj" collectionClass="NSMutableArray" id="EWh-ml-tSP"/>
                         <outletCollection property="gameButtons" destination="8Be-ZJ-XuP" collectionClass="NSMutableArray" id="G8H-fI-8M9"/>
                         <outletCollection property="gameButtons" destination="0DN-dt-VJy" collectionClass="NSMutableArray" id="HzV-UO-bPL"/>
+                        <outletCollection property="gameButtons" destination="prh-hm-A0t" collectionClass="NSMutableArray" id="vB4-Oo-Hcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
