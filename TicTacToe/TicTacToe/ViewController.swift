@@ -8,10 +8,8 @@
 
 import UIKit
 
-//@available(iOS 13.0, *)
+@available(iOS 13.0, *)
 class ViewController: UIViewController {
-    
-//    let xMark = UIImage(systemName: "xmark")
     
     @IBOutlet var gameButtons: [GameButton]!
     
@@ -23,7 +21,7 @@ class ViewController: UIViewController {
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
         print("at row \(gameButton.row) at column \(gameButton.col)")
         
-        gameButton.setImage(UIImage(named: "xmark"), for: [])
+        gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
     }
     
 
