@@ -32,7 +32,6 @@ class ViewController: UIViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     displayLabel.text = "Let's Play Tic Tac Toe!"
   }
     
@@ -54,22 +53,21 @@ class ViewController: UIViewController {
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
         print("at row \(gameButton.row) at column \(gameButton.col)")
         
-        let position = gameButton.tag - 0
-        
-        if tagPlacement[position] == 0 {
-            
-            tagPlacement[position] = activePlayer
-            
-            if activePlayer == 1 {
-                gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
-                activePlayer = 2
-            } else {
-                gameButton.setImage(UIImage(systemName: "circle"), for:.normal)
-                activePlayer = 1
-            }
-        }
+       let position = gameButton.tag - 0
+                  
+           if tagPlacement[position] == 0 {
+                      
+               tagPlacement[position] = activePlayer
+                      
+               if activePlayer == 1 {
+                   gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
+                          activePlayer = 2
+               } else {
+                   gameButton.setImage(UIImage(systemName: "circle"), for:.normal)
+                   activePlayer = 1
+                          
+               }
+           }
+       }
     }
-    
-
-}
 
