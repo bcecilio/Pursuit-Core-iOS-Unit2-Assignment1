@@ -88,10 +88,9 @@ class ViewController: UIViewController {
                         player2Score += 1
                         secondPlayerScore.text = "Player 2 : \(player2Score)"
                     }
-                    
-                    }
                 }
             }
         }
+    }
 }
 
