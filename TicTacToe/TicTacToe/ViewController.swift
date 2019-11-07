@@ -13,8 +13,12 @@ class ViewController: UIViewController {
     
     // player 1 is X, player 2 is O
     var activePlayer = 1
-    
+    var activeGame = true
     var tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var brain = TicTacToeBrain()
+    var player1Score = 0
+    var player2Score = 0
+    
     
     @IBOutlet var gameButtons: [GameButton]!
    
@@ -34,10 +38,11 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     displayLabel.text = "Let's Play Tic Tac Toe!"
   }
-    
+   
     @IBAction func newGame(_ sender: UIButton) {
         
-        displayLabel.text = "Play Again!"
+        displayLabel.text = "Let's Play Tic Tac Toe!"
+        tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         
         colRow0.setImage(UIImage(systemName: ""), for:.normal)
         colRow1.setImage(UIImage(systemName: ""), for:.normal)
@@ -50,24 +55,37 @@ class ViewController: UIViewController {
         colRow8.setImage(UIImage(systemName: ""), for:.normal)
     }
     
+   
+    
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
         print("at row \(gameButton.row) at column \(gameButton.col)")
         
-       let position = gameButton.tag - 0
-                  
-           if tagPlacement[position] == 0 {
+           let position = gameButton.tag - 0
                       
-               tagPlacement[position] = activePlayer
-                      
-               if activePlayer == 1 {
-                   gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
-                          activePlayer = 2
-               } else {
-                   gameButton.setImage(UIImage(systemName: "circle"), for:.normal)
-                   activePlayer = 1
+        if tagPlacement[position] == 0 {
                           
-               }
-           }
-       }
-    }
+                   tagPlacement[position] = activePlayer
+                          
+                   if activePlayer == 1 {
+                       gameButton.setImage(UIImage(systemName: "xmark"), for:.normal)
+                       activePlayer = 2
+                        } else {
+                            gameButton.setImage(UIImage(systemName: "circle"), for:.normal)
+                            activePlayer = 1
+                            }
+            
+            for combination in brain.winningCombination {
+                if tagPlacement[combination[0]] != 0 && tagPlacement[combination[0]] == tagPlacement[combination[1]] && tagPlacement[combination[1]] == tagPlacement[combination[2]] {
+                    
+                    if tagPlacement[combination[0]] == 1 {
+                        displayLabel.text = "Player 1 is the Winner! Play again?"
+                    } else {
+                        displayLabel.text = "Player 2 is the Winner! Play again?"
+                    }
+                    
+                    }
+                }
+            }
+        }
+}
 
