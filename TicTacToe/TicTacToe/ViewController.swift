@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var colRow8: GameButton!
     
     @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var firstPlayerScore: UILabel!
+    @IBOutlet weak var secondPlayerScore: UILabel!
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -79,8 +81,12 @@ class ViewController: UIViewController {
                     
                     if tagPlacement[combination[0]] == 1 {
                         displayLabel.text = "Player 1 is the Winner! Play again?"
+                        player1Score += 1
+                        firstPlayerScore.text = "Player 1 : \(player1Score)"
                     } else {
                         displayLabel.text = "Player 2 is the Winner! Play again?"
+                        player2Score += 1
+                        secondPlayerScore.text = "Player 2 : \(player2Score)"
                     }
                     
                     }

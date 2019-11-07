@@ -142,7 +142,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iox-Vj-GjI">
-                                <rect key="frame" x="57" y="694" width="300" height="30"/>
+                                <rect key="frame" x="62" y="694" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
@@ -165,7 +165,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIo-ro-ayw">
-                                <rect key="frame" x="20" y="144" width="374" height="84"/>
+                                <rect key="frame" x="25" y="146" width="374" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-Zv-aN5">
+                                <rect key="frame" x="25" y="90" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qht-ir-bBP">
+                                <rect key="frame" x="25" y="130" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -186,6 +200,8 @@
                         <outlet property="colRow7" destination="oSe-Fk-PIT" id="jVf-BX-HP6"/>
                         <outlet property="colRow8" destination="0DN-dt-VJy" id="I7x-AD-5V8"/>
                         <outlet property="displayLabel" destination="WIo-ro-ayw" id="SWP-n2-Hty"/>
+                        <outlet property="firstPlayerScore" destination="vbg-Zv-aN5" id="mUC-f6-smy"/>
+                        <outlet property="secondPlayerScore" destination="qht-ir-bBP" id="Qrx-ea-xm5"/>
                         <outletCollection property="gameButtons" destination="QXK-Oa-dGq" collectionClass="NSMutableArray" id="ODg-vd-KYB"/>
                         <outletCollection property="gameButtons" destination="oAE-U9-4iL" collectionClass="NSMutableArray" id="51Q-9k-Nom"/>
                         <outletCollection property="gameButtons" destination="u1b-CJ-JUA" collectionClass="NSMutableArray" id="FNV-3h-ZqX"/>
