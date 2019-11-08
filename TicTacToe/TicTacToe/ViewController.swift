@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     
     // player 1 is X, player 2 is O
     var activePlayer = 1
-    var activeGame = true
     var tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var brain = TicTacToeBrain()
     var player1Score = 0
@@ -40,22 +39,6 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     displayLabel.text = "Let's Play Tic Tac Toe!"
   }
-   
-    @IBAction func newGame(_ sender: UIButton) {
-        
-        displayLabel.text = "Let's Play Tic Tac Toe!"
-        tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        
-        colRow0.setImage(UIImage(systemName: ""), for:.normal)
-        colRow1.setImage(UIImage(systemName: ""), for:.normal)
-        colRow2.setImage(UIImage(systemName: ""), for:.normal)
-        colRow3.setImage(UIImage(systemName: ""), for:.normal)
-        colRow4.setImage(UIImage(systemName: ""), for:.normal)
-        colRow5.setImage(UIImage(systemName: ""), for:.normal)
-        colRow6.setImage(UIImage(systemName: ""), for:.normal)
-        colRow7.setImage(UIImage(systemName: ""), for:.normal)
-        colRow8.setImage(UIImage(systemName: ""), for:.normal)
-    }
     
    
     
@@ -81,10 +64,12 @@ class ViewController: UIViewController {
                     
                     if tagPlacement[combination[0]] == 1 {
                         displayLabel.text = "Player 1 is the Winner! Play again?"
+                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         player1Score += 1
                         firstPlayerScore.text = "Player 1 : \(player1Score)"
-                    } else {
+                    } else if tagPlacement[combination[0]] == 2 {
                         displayLabel.text = "Player 2 is the Winner! Play again?"
+                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         player2Score += 1
                         secondPlayerScore.text = "Player 2 : \(player2Score)"
                     }
@@ -92,5 +77,23 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        
+        displayLabel.text = "Let's Play Tic Tac Toe!"
+        tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        activePlayer = 1
+        
+        colRow0.setImage(UIImage(systemName: ""), for:.normal)
+        colRow1.setImage(UIImage(systemName: ""), for:.normal)
+        colRow2.setImage(UIImage(systemName: ""), for:.normal)
+        colRow3.setImage(UIImage(systemName: ""), for:.normal)
+        colRow4.setImage(UIImage(systemName: ""), for:.normal)
+        colRow5.setImage(UIImage(systemName: ""), for:.normal)
+        colRow6.setImage(UIImage(systemName: ""), for:.normal)
+        colRow7.setImage(UIImage(systemName: ""), for:.normal)
+        colRow8.setImage(UIImage(systemName: ""), for:.normal)
+    }
 }
+
 
