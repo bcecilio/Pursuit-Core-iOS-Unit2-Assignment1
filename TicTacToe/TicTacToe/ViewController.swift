@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var brain = TicTacToeBrain()
     var player1Score = 0
     var player2Score = 0
-    
+    var activeGame = true
     
     @IBOutlet var gameButtons: [GameButton]!
    
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         
            let position = gameButton.tag - 0
                       
-        if tagPlacement[position] == 0 {
+        if tagPlacement[position] == 0 && activeGame {
                           
                    tagPlacement[position] = activePlayer
                           
@@ -64,14 +64,16 @@ class ViewController: UIViewController {
                     
                     if tagPlacement[combination[0]] == 1 {
                         displayLabel.text = "Player 1 is the Winner! Play again?"
-                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         player1Score += 1
-                        firstPlayerScore.text = "Player 1 : \(player1Score)"
+                        firstPlayerScore.text = "Player 1: \(player1Score)"
+//                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
+                        activeGame = false
                     } else if tagPlacement[combination[0]] == 2 {
                         displayLabel.text = "Player 2 is the Winner! Play again?"
-                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         player2Score += 1
-                        secondPlayerScore.text = "Player 2 : \(player2Score)"
+                        secondPlayerScore.text = "Player 2: \(player2Score)"
+//                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
+                        activeGame = false
                     }
                 }
             }
@@ -95,5 +97,3 @@ class ViewController: UIViewController {
         colRow8.setImage(UIImage(systemName: ""), for:.normal)
     }
 }
-
-
