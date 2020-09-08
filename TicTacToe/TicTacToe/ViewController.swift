@@ -66,18 +66,13 @@ class ViewController: UIViewController {
                         displayLabel.text = "Player 1 is the Winner! Play again?"
                         player1Score += 1
                         firstPlayerScore.text = "Player 1: \(player1Score)"
-//                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         activeGame = false
                     } else if tagPlacement[combination[0]] == 2 {
                         displayLabel.text = "Player 2 is the Winner! Play again?"
                         player2Score += 1
                         secondPlayerScore.text = "Player 2: \(player2Score)"
-//                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         activeGame = false
                     }
-//                    if tagPlacement[combination[0]] != tagPlacement[combination[1]] && tagPlacement[combination[0]] != tagPlacement[combination[2]] {
-//                        displayLabel.text = "Tie?"
-//                    }
                 }
             }
         }
