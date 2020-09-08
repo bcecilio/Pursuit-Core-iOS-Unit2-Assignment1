@@ -75,6 +75,9 @@ class ViewController: UIViewController {
 //                        tagPlacement = [1, 1, 1, 1, 1, 1, 1, 1, 1]
                         activeGame = false
                     }
+//                    if tagPlacement[combination[0]] != tagPlacement[combination[1]] && tagPlacement[combination[0]] != tagPlacement[combination[2]] {
+//                        displayLabel.text = "Tie?"
+//                    }
                 }
             }
         }
@@ -83,6 +86,28 @@ class ViewController: UIViewController {
     @IBAction func newGame(_ sender: UIButton) {
         
         displayLabel.text = "Let's Play Tic Tac Toe!"
+        activeGame = true
+        tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        activePlayer = 1
+        
+        colRow0.setImage(UIImage(systemName: ""), for:.normal)
+        colRow1.setImage(UIImage(systemName: ""), for:.normal)
+        colRow2.setImage(UIImage(systemName: ""), for:.normal)
+        colRow3.setImage(UIImage(systemName: ""), for:.normal)
+        colRow4.setImage(UIImage(systemName: ""), for:.normal)
+        colRow5.setImage(UIImage(systemName: ""), for:.normal)
+        colRow6.setImage(UIImage(systemName: ""), for:.normal)
+        colRow7.setImage(UIImage(systemName: ""), for:.normal)
+        colRow8.setImage(UIImage(systemName: ""), for:.normal)
+    }
+    
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        displayLabel.text = "Let's Play Tic Tac Toe!"
+        player1Score = 0
+        player2Score = 0
+        firstPlayerScore.text = "Player 1: "
+        secondPlayerScore.text = "Player 2: "
+        activeGame = true
         tagPlacement = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         activePlayer = 1
         
